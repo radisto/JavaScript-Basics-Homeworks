@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+			margin: 0;
+		}
+		#outerDiv {
+			width: 620px;
+			height: 620px;
+		}
+		#d1, #d2, #d3, #d4, #d5, #d6, #d7, #d8, #d9 {
+			width: 200px;
+			height: 200px;
+		}
+		#d1, #d4, #d7 {
+			float: left;
+		}
+		#d3, #d6, #d9 {
+			float: right;
+		}
+		#d2, #d5, #d8 {
+			display: inline-block;
+		}
+		#d1, #d2, #d7, #d8 {
+			border-right: 10px solid black;
+		}
+		#d4 {
+			border-top: 10px solid black;
+			border-bottom: 10px solid black;
+		}
+		#d5 {
+			border-right: 10px solid black;
+			border-left: 10px solid black;
+			border-top: 10px solid black;
+			border-bottom: 10px solid black;
+		}
+		#d6 {
+			border-top: 10px solid black;
+			border-bottom: 10px solid black;
+		}
+		div.height1 {
+			width: 620px;
+			height: 200px;
+		}
+		div.height2 {
+			width: 620px;
+			height: 220px;
+		}
+	</style>
+</head>
+<body>
+	<div id="outerDiv">
+		<div class="height1">
+			<div id="d1"><img src="blank.png" onclick="x_or_o('d1')"></div>
+			<div id="d2"><img src="blank.png" onclick="x_or_o('d2')"></div>
+			<div id="d3"><img src="blank.png" onclick="x_or_o('d3')"></div>
+		</div>
+		<div class="height2">
+			<div id="d4"><img src="blank.png" onclick="x_or_o('d4')"></div>
+			<div id="d5"><img src="blank.png" onclick="x_or_o('d5')"></div>
+			<div id="d6"><img src="blank.png" onclick="x_or_o('d6')"></div>
+		</div>
+		<div class="height1">
+			<div id="d7"><img src="blank.png" onclick="x_or_o('d7')"></div>
+			<div id="d8"><img src="blank.png" onclick="x_or_o('d8')"></div>
+			<div id="d9"><img src="blank.png" onclick="x_or_o('d9')"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var counter = 0;
+		function x_or_o($div) {
+			counter++;
+			if (counter % 2 == 1) {
+				document.getElementById($div).innerHTML = '<img src="x.png">';
+			}
+			else {
+				document.getElementById($div).innerHTML = '<img src="o.png">';
+			}
+		}
+	</script>
+</body>
+</html>
